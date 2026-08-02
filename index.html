@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EDU - វេទិកាសិក្សា រចនា វីដេអូ និងព័ត៌មានវិទ្យា</title>
+
+  <!-- Google Fonts: Khmer OS Battambang & Khmer OS Moul Light (Kantumruy Pro / Moul) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Moul&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Global Khmer Fonts Configuration */
+    body {
+      font-family: 'Battambang', 'Khmer OS Battambang', sans-serif !important;
+    }
+
+    /* Titles using Khmer OS Moul Light style */
+    h1, h2, h3, h4, h5, h6, 
+    .navbar-brand, 
+    .section-title, 
+    .modal-title,
+    .khmer-moul {
+      font-family: 'Moul', 'Khmer OS Moul Light', sans-serif !important;
+      line-height: 1.6;
+    }
+
+    /* Small Adjustments for Khmer Line Height */
+    p, span, a, button, input, textarea, label, div {
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body class="bg-light text-dark d-flex flex-column min-vh-100">
+
+  <!-- Bootstrap Sticky Navbar -->
+  <header class="sticky-top bg-white border-bottom shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light container">
+      <a class="navbar-brand fw-bold text-primary fs-4 d-flex align-items-center gap-2" href="#">
+        <i class="fa-solid fa-graduation-cap"></i> សាលា EDU
+      </a>
+      
+      <div class="d-flex align-items-center gap-2 ms-auto">
+        <!-- Dark/Light Mode Toggle Button -->
+        <button id="dark-mode-toggle" class="btn btn-outline-secondary rounded-circle p-2" style="width: 40px; height: 40px;" aria-label="Toggle dark mode">
+          <i id="theme-icon" class="fa-solid fa-moon"></i>
+        </button>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-links navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a href="#" class="nav-link nav-item-link active px-3 rounded" data-target="home">ទំព័រដើម</a></li>
+          <li class="nav-item"><a href="#" class="nav-link nav-item-link px-3 rounded" data-target="class">ថ្នាក់សិក្សា</a></li>
+          <li class="nav-item"><a href="#" class="nav-link nav-item-link px-3 rounded" data-target="about">អំពីយើង</a></li>
+          <li class="nav-item"><a href="#" class="nav-link nav-item-link px-3 rounded" data-target="contact">ទំនាក់ទំនង</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow-1">
+    <!-- ================= HOME SECTION ================= -->
+    <section id="home" class="page-section active">
+
+      <!-- 1. Auto Sliding Carousel Banner (2-Second Interval) -->
+      <div id="homeHeroCarousel" class="carousel slide carousel-fade border-bottom shadow-sm" data-bs-ride="carousel" data-bs-interval="2000">
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+
+        <!-- Carousel Slides -->
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active" data-bs-interval="2000">
+            <div class="position-relative" style="height: 480px;">
+              <img src="images/111.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Graphic & 3D Design" onerror="this.src='https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=80'">
+              <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 top-0 bottom-0 bg-dark bg-opacity-50 rounded p-4">
+                <h1 class="h3 fw-bold text-white mb-2">ជំនាញរចនាក្រាហ្វិក និង 3D</h1>
+                <p class="lead text-light mb-4 fs-6">រៀនប្រើប្រាស់កម្មវិធី Photoshop, Illustrator, និង Cinema 4D តាមរយៈគម្រោងអនុវត្តជាក់ស្តែង។</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="position-relative" style="height: 480px;">
+              <img src="images/222.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Video Editing" onerror="this.src='https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80'">
+              <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 top-0 bottom-0 bg-dark bg-opacity-50 rounded p-4">
+                <h1 class="h3 fw-bold text-white mb-2">ការកាត់តវីដេអូ និង Motion FX</h1>
+                <p class="lead text-light mb-4 fs-6">ស្ទាត់ជំនាញប្រើប្រាស់ Premiere Pro និង After Effects ក្នុងការបង្កើត Effect និងសារ៉េពណ៌វីដេអូ។</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="position-relative" style="height: 480px;">
+              <img src="images/333.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Web Development" onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80'">
+              <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 top-0 bottom-0 bg-dark bg-opacity-50 rounded p-4">
+                <h1 class="h3 fw-bold text-white mb-2">ការអភិវឌ្ឍគេហទំព័រ Full-Stack</h1>
+                <p class="lead text-light mb-4 fs-6">បង្កើតគេហទំព័រទំនើបៗដោយប្រើប្រាស់ HTML, CSS, JavaScript, និង Java។</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="position-relative" style="height: 480px;">
+              <img src="images/444.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Mobile Apps" onerror="this.src='https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80'">
+              <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 top-0 bottom-0 bg-dark bg-opacity-50 rounded p-4">
+                <h1 class="h3 fw-bold text-white mb-2">ការបង្កើតកម្មវិធីទូរស័ព្ទដៃ</h1>
+                <p class="lead text-light mb-4 fs-6">រចនា និងអភិវឌ្ឍ Mobile App ដើរលើ iOS & Android ដោយប្រើ Flutter & Dart។</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="position-relative" style="height: 480px;">
+              <img src="images/555.jpg" class="d-block w-100 h-100 object-fit-cover" alt="IT Systems & Networking" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80'">
+              <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 top-0 bottom-0 bg-dark bg-opacity-50 rounded p-4">
+                <h1 class="h3 fw-bold text-white mb-2">ប្រព័ន្ធបណ្តាញ Networking & Admin</h1>
+                <p class="lead text-light mb-4 fs-6">យល់ដឹងពី OSI Models, ការដំឡើង Server និងប្រព័ន្ធបណ្តាញកម្រិតសហគ្រាស។</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeHeroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">ថយក្រោយ</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeHeroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">ទៅមុខ</span>
+        </button>
+      </div>
+
+      <!-- 2. Course Categories Section -->
+      <div class="container my-5">
+        <h2 class="text-center fw-bold mb-4 position-relative section-title fs-3">ប្រភេទមេរៀនទាំងអស់</h2>
+        
+        <div class="row g-4">
+          <!-- Category 1: Design -->
+          <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm text-center p-3 h-100 rounded-3 hover-shadow" style="cursor: pointer;" onclick="document.querySelector('[data-target=\'class\']').click();">
+              <img src="images/111.jpg" class="card-img-top rounded mb-3" style="height: 120px; object-fit: cover;" alt="Design Category" onerror="this.src='https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=400&q=80'">
+              <h5 class="fw-bold fs-6 m-0">រចនាក្រាហ្វិក</h5>
+              <span class="badge bg-light text-primary border mt-2">Photoshop & AI</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Video -->
+          <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm text-center p-3 h-100 rounded-3 hover-shadow" style="cursor: pointer;" onclick="document.querySelector('[data-target=\'class\']').click();">
+              <img src="images/222.jpg" class="card-img-top rounded mb-3" style="height: 120px; object-fit: cover;" alt="Video Editing Category" onerror="this.src='https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80'">
+              <h5 class="fw-bold fs-6 m-0">កាត់តវីដេអូ</h5>
+              <span class="badge bg-light text-danger border mt-2">Premiere & AE</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Coding -->
+          <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm text-center p-3 h-100 rounded-3 hover-shadow" style="cursor: pointer;" onclick="document.querySelector('[data-target=\'class\']').click();">
+              <img src="images/333.jpg" class="card-img-top rounded mb-3" style="height: 120px; object-fit: cover;" alt="Web Dev Category" onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80'">
+              <h5 class="fw-bold fs-6 m-0">អភិវឌ្ឍគេហទំព័រ</h5>
+              <span class="badge bg-light text-success border mt-2">HTML, CSS & JS</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Mobile & IT -->
+          <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm text-center p-3 h-100 rounded-3 hover-shadow" style="cursor: pointer;" onclick="document.querySelector('[data-target=\'class\']').click();">
+              <img src="images/444.jpg" class="card-img-top rounded mb-3" style="height: 120px; object-fit: cover;" alt="Mobile App Category" onerror="this.src='https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=400&q=80'">
+              <h5 class="fw-bold fs-6 m-0">កម្មវិធីទូរស័ព្ទ & IT</h5>
+              <span class="badge bg-light text-info border mt-2">Flutter & Java</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- ================= SOFTWARE & AI PRO SECTION ================= -->
+<div class="container my-5" id="software-section">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold position-relative section-title fs-3">កម្មវិធី និង AI Pro សម្រាប់ទាញយក</h2>
+    <p class="text-muted small">
+      ទិញកញ្ចប់កម្មវិធី  ក្នុងតម្លៃត្រឹមតែ 
+      <strong class="text-danger fw-bold">$14.99 USD</strong> ដើម្បីទាញយកក្នុង Telegram Group Private
+    </p>
+  </div>
+
+  <!-- Software / AI Grid -->
+  <div class="row g-2 g-md-3" id="software-container">
+    <!-- Dynamic items generated by JS -->
+  </div>
+</div>
+    </section>
+
+    <!-- ================= CLASS SECTION ================= -->
+    <section id="class" class="page-section">
+      <!-- State 1: Courses List -->
+      <div id="course-list-view" class="container my-4 my-md-5">
+        <h2 class="text-center fw-bold mb-4 section-title fs-3">វគ្គសិក្សាទាំងអស់</h2>
+        
+        <!-- Live Search Input -->
+        <div class="row justify-content-center mb-4">
+          <div class="col-11 col-md-6">
+            <div class="input-group">
+              <span class="input-group-text bg-white"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+              <input type="text" id="course-search-input" class="form-control" placeholder="ស្វែងរកវគ្គសិក្សា (Photoshop, Java, Web)..." />
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Columns on Mobile (col-6), 3 Columns on Computer (col-md-4) -->
+        <div class="row g-2 g-md-3" id="courses-container">
+          <!-- Populated dynamically from JS -->
+        </div>
+      </div>
+
+      <!-- State 2: Course Lessons View -->
+      <div id="lessons-view" class="container my-4 my-md-5 hidden">
+        <button class="btn btn-outline-secondary btn-sm mb-3" id="btn-back-courses">
+          <i class="fa-solid fa-arrow-left me-1"></i> ត្រឡប់ទៅវគ្គសិក្សា
+        </button>
+        <h2 id="current-course-title" class="text-center fw-bold mb-4 section-title fs-3">មេរៀនក្នុងវគ្គនេះ</h2>
+        
+        <!-- Lessons Grid: 2 Columns on Mobile, 3 Columns on Computer -->
+        <div class="row g-2 g-md-3" id="lessons-container">
+          <!-- Lessons loaded dynamically from JS -->
+        </div>
+      </div>
+
+      <!-- State 3: Video Player View -->
+      <div id="video-player-view" class="container my-4 my-md-5 hidden">
+        <button class="btn btn-outline-secondary btn-sm mb-3" id="btn-back-lessons">
+          <i class="fa-solid fa-arrow-left me-1"></i> ត្រឡប់ទៅបញ្ជីមេរៀន
+        </button>
+        <div class="card p-3 p-md-4 border shadow-sm mx-auto" style="max-width: 900px;">
+          <h3 id="video-lesson-title" class="h5 fw-bold mb-3">ចំណងជើងមេរៀន</h3>
+          <div class="ratio ratio-16x9 bg-dark rounded overflow-hidden">
+            <video id="main-video" controls controlsList="nodownload" oncontextmenu="return false;">
+              <source id="video-source" src="" type="video/mp4" />
+              កម្មវិធីរុករករបស់អ្នកមិនគាំទ្រវីដេអូ HTML5 ទេ។
+            </video>
+          </div>
+          <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-primary btn-sm" id="btn-fullscreen">
+              <i class="fa-solid fa-expand me-1"></i> ពង្រីកពេញអេក្រង់
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about" class="page-section">
+      <div class="container my-5">
+        <h2 class="text-center fw-bold mb-4 section-title fs-3">អំពីសាលា EDU Academy</h2>
+        
+        <!-- Mission Hero Banner -->
+        <div class="card p-4 p-md-5 border-0 shadow-sm bg-primary text-dark mb-5 rounded-4 text-center position-relative overflow-hidden">
+          <div class="position-relative z-1 max-w-700 mx-auto">
+            <span class="badge bg-light text-primary fw-bold text-uppercase px-3 py-2 rounded-pill mb-3">បេសកកម្មរបស់យើង</span>
+            <h3 class="h4 fw-bold mb-3 text-dark">ពង្រឹងសមត្ថភាពរបសអ្នកបង្កើតឌីជីថល និងអ្នកជំនាញ IT </h3>
+            <p class="lead opacity-90 m-0 fs-6">
+              EDU Academy ផ្សារភ្ជាប់គម្លាតរវាងទ្រឹស្តី និងការអនុវត្តជាក់ស្តែង តាមរយៈមេរៀនវីដេអូដែលមានរចនាសម្ព័ន្ធច្បាស់លាស់ លើជំនាញរចនាក្រាហ្វិក កាត់តវីដេអូ បង្កើតគេហទំព័រ និងអភិវឌ្ឍកម្មវិធីទូរស័ព្ទ។
+            </p>
+          </div>
+        </div>
+
+        <!-- CEO & Founder Spotlight Section -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-10">
+            <div class="card border-0 shadow-sm overflow-hidden rounded-4 bg-white">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-5 bg-light text-center p-4 p-md-5">
+                  <div class="position-relative d-inline-block mb-3">
+                    <img 
+                      src="images/ceo.jpg" 
+                      alt="CEO & Founder" 
+                      class="rounded-circle img-thumbnail shadow-sm"
+                      style="width: 180px; height: 180px; object-fit: cover;"
+                    />
+                    <span class="position-absolute bottom-0 end-0 bg-success border border-white border-3 rounded-circle p-2" title="Active"></span>
+                  </div>
+                  <h4 class="fw-bold mb-1 fs-5">ខឹម អូន</h4>
+                  <p class="text-primary fw-semibold small mb-3">នាយកប្រតិបត្តិ និងស្ថាបនិក EDU Academy</p>
+                  <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-circle" style="width: 36px; height: 36px; line-height: 24px;"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-danger rounded-circle" style="width: 36px; height: 36px; line-height: 24px;"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-dark rounded-circle" style="width: 36px; height: 36px; line-height: 24px;"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <div class="col-md-7 p-4 p-md-5">
+                  <h4 class="fw-bold mb-3 fs-5"><i class="fa-solid fa-quote-left text-primary me-2 opacity-50"></i>សារពីស្ថាបនិក</h4>
+                  <p class="text-muted mb-3" style="line-height: 1.8;">
+                    "យើងបង្កើត EDU Academy ឡើងក្រោមជំនឿយ៉ាងមុតមាំមួយ៖ ការអប់រំបច្ចេកវិទ្យាដែលមានគុណភាពខ្ពស់ ត្រូវតែមានភាពងាយស្រួលរៀន និងផ្តោតលើការអនុវត្តជាក់ស្តែង។ ទោះបីជាអ្នកទើបតែចាប់ផ្តើមរៀនសរសេរកូដដំបូង ឬរចនារូបភាព 3D ក៏ដោយ វគ្គសិក្សារបស់យើងនឹងនាំអ្នកពីកម្រិតដំបូងរហូតដល់អាចធ្វើការបាន។"
+                  </p>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <div>
+                      <small class="text-uppercase text-muted fw-bold d-block" style="font-size: 0.75rem;">ទីតាំង</small>
+                      <span class="fw-semibold text-dark small"><i class="fa-solid fa-location-dot text-danger me-1"></i> រាជធានីភ្នំពេញ កម្ពុជា</span>
+                    </div>
+                    <div>
+                      <small class="text-uppercase text-muted fw-bold d-block" style="font-size: 0.75rem;">ទំនាក់ទំនងផ្ទាល់</small>
+                      <span class="fw-semibold text-dark small"><i class="fa-solid fa-envelope text-info me-1"></i> khemoun4@gmail.com</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Values Section -->
+        <h3 class="text-center fw-bold mb-4 fs-4">ហេតុអ្វីជ្រើសរើសរៀនជាមួយយើង</h3>
+        <div class="row g-4 mb-5 text-center">
+          <div class="col-md-4">
+            <div class="card h-100 p-4 border shadow-sm rounded-3">
+              <i class="fa-solid fa-layer-group text-primary display-6 mb-3"></i>
+              <h5 class="fw-bold fs-6">មេរៀនរៀបតាមលំដាប់លំដោយ</h5>
+              <p class="text-muted small m-0">មេរៀនត្រូវបានរៀបចំយ៉ាងសម្រិតសម្រាំង ដើម្បីឱ្យសិស្សងាយយល់ពីគ្រឹះរហូតដល់កម្រិតជំពាក់ខ្ពស់។</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 p-4 border shadow-sm rounded-3">
+              <i class="fa-solid fa-laptop-code text-primary display-6 mb-3"></i>
+              <h5 class="fw-bold fs-6">ផ្តោតលើការអនុវត្តជាក់ស្តែង</h5>
+              <p class="text-muted small m-0">មិនរៀនតែទ្រឹស្តីទទេ។ សិស្សទទួលបានការអនុវត្តផ្ទាល់លើគម្រោងជាក់ស្តែងក្នុងថ្នាក់។</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 p-4 border shadow-sm rounded-3">
+              <i class="fa-solid fa-clock-rotate-left text-primary display-6 mb-3"></i>
+              <h5 class="fw-bold fs-6">ចូលរៀនបានរហូត</h5>
+              <p class="text-muted small m-0">ទូទាត់តែម្តង អាចចូលមើលមេរៀនបានគ្រប់ពេលវេលា លើទូរស័ព្ទ និងកុំព្យូទ័រ។</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialized Skill Tracks -->
+        <h3 class="text-center fw-bold mb-4 fs-4">ជំនាញឯកទេសសិក្សា</h3>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card h-100 p-4 border shadow-sm rounded-3">
+              <i class="fa-solid fa-palette text-info text-center display-6 mb-3"></i>
+              <h4 class="h5 fw-bold text-center mb-3">ផ្នែករចនា និងវីដេអូ</h4>
+              <ul class="text-muted small lh-lg mb-0">
+                <li><strong>Adobe Photoshop (៤០ មេរៀន):</strong> Layering, masks, vector paths, តែកាត់រូបភាព</li>
+                <li><strong>Adobe Illustrator (២៥ មេរៀន):</strong> Vector illustration, រចនា Logo, ប្រង់ម៉ាកសញ្ញា</li>
+                <li><strong>Adobe Premiere Pro (៣០ មេរៀន):</strong> ការកាត់តវីដេអូ, Transitions, Lumetri color</li>
+                <li><strong>Adobe After Effects (២០ មេរៀន):</strong> Kinetic text, keyframe animation, 3D tracker</li>
+                <li><strong>Cinema 4D (២៨ មេរៀន):</strong> រចនារូបភាព 3D, texturing, lighting, Redshift render</li>
+                <!-- Design & Video Track Update -->
+                <li><strong>CapCut Editing (២០ មេរៀន):</strong> កាត់តវីដេអូទូរស័ព្ទ, Speed Ramping, Keyfram, Auto Captions</li>
+                <!-- Software & IT Track Update -->
+                <li><strong>Advanced Excel (២៥ មេរៀន):</strong> VLOOKUP, XLOOKUP, Pivot Tables, Data Dashboards</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card h-100 p-4 border shadow-sm rounded-3">
+              <i class="fa-solid fa-code text-info text-center display-6 mb-3"></i>
+              <h4 class="h5 fw-bold text-center mb-3">ផ្នែកសរសេរកូដ និង IT</h4>
+              <ul class="text-muted small lh-lg mb-0">
+                <li><strong>HTML & CSS (៣២ មេរៀន):</strong> Semantic markup, flexbox, grid, responsive design</li>
+                <li><strong>Web Development II (៣៦ មេរៀន):</strong> DOM scripting, REST APIs, async/await</li>
+                <li><strong>Java Programming (៣៥ មេរៀន):</strong> OOP concepts, data structures, algorithms</li>
+                <li><strong>Flutter & Dart (៣០ មេរៀន):</strong> Cross-platform UI, state management, mobile apps</li>
+                <li><strong>Networking & Systems:</strong> OSI layers, Windows Server Active Directory, SDLC</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="page-section">
+      <div class="container my-5">
+        <h2 class="text-center fw-bold mb-2 section-title fs-3">ទំនាក់ទំនងយើងខ្ញុំ</h2>
+        <p class="text-center text-muted mb-4">មានសំណួរអំពីវគ្គសិក្សា ឬការប្រើប្រាស់ប្រព័ន្ធ? សូមផ្ញើសារមកកាន់យើងខ្ញុំនៅខាងក្រោម។</p>
+
+        <div class="row g-4">
+          <div class="col-md-5">
+            <div class="card p-4 border shadow-sm h-100">
+              <h3 class="h5 fw-bold text-primary mb-3">ព័ត៌មានទំនាក់ទំនង</h3>
+              <p class="text-muted small mb-4">ក្រុមការងារគាំទ្ររបស់យើងរង់ចាំជួយសម្រួលរាល់ចម្ងល់របស់សិស្សជានិច្ច។</p>
+
+              <div class="mb-3">
+                <p class="mb-1 fw-semibold"><i class="fa-solid fa-envelope text-info me-2"></i>អ៊ីមែលគាំទ្រ</p>
+                <p class="text-muted small ms-4">khemoun4@gmail.com</p>
+              </div>
+
+              <div class="mb-3">
+                <p class="mb-1 fw-semibold"><i class="fa-solid fa-location-dot text-info me-2"></i>អាសយដ្ឋាន</p>
+                <p class="text-muted small ms-4">ខណ្ឌសែនសុខ រាជធានីភ្នំពេញ កម្ពុជា</p>
+              </div>
+
+              <div>
+                <p class="mb-1 fw-semibold"><i class="fa-solid fa-phone text-info me-2"></i>លេខទូរស័ព្ទ</p>
+                <p class="text-muted small ms-4 mb-0">+855 99 822 579</p>
+                <p class="text-muted extra-small ms-4">ច័ន្ទ – សុក្រ, ៩:០០ ព្រឹក – ៦:០០ ល្ងាច</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-7">
+            <div class="card p-4 border shadow-sm">
+              <h3 class="h5 fw-bold mb-3">ផ្ញើសារមកកាន់យើង</h3>
+              
+              <form id="contact-form" onsubmit="sendTelegramMessage(event)">
+                <div class="mb-3">
+                  <label for="name" class="form-label fw-semibold">ឈ្មោះពេញ</label>
+                  <input type="text" class="form-control" id="name" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" required />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label fw-semibold">អាសយដ្ឋានអ៊ីមែល</label>
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com" required />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label fw-semibold">សាររបស់អ្នក</label>
+                  <textarea class="form-control" id="message" rows="4" placeholder="សរសេរសាររបស់អ្នកនៅទីនេះ..." required></textarea>
+                </div>
+                <button type="submit" id="btn-send-message" class="btn btn-primary w-100 py-2 fw-semibold">
+                  <i class="fa-solid fa-paper-plane me-1"></i> ផ្ញើសារ
+                </button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- Payment Modal with Direct ABA Link, Receipt Upload & 5-Min Timer -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold fs-5" id="paymentModalTitle">បង់ប្រាក់ដើម្បីចូលរៀន</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted small">ស្កែន ឬចុចខាងក្រោមដើម្បីបង់ប្រាក់តាម ABA Mobile។</p>
+
+          <!-- Clickable QR Code -->
+          <div class="my-2 p-3 bg-light rounded d-inline-block border">
+            <a href="https://link.payway.com.kh/ABAPAYvc489873f" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="images/qr.jpg" 
+                alt="ស្កែន QR Code ដើម្បីបង់ប្រាក់ តាម ABA" 
+                class="img-fluid"
+                style="max-width: 180px;"
+              />
+            </a>
+          </div>
+
+          <!-- Direct ABA Pay Mobile Link Button -->
+          <div class="mb-3">
+            <a 
+              href="https://link.payway.com.kh/ABAPAYvc489873f" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-primary w-100 fw-bold py-2"
+              style="background-color: #005470; border-color: #005470;"
+            >
+              <i class="fa-solid fa-mobile-screen-button me-2"></i> បង់ប្រាក់តាម ABA Mobile 
+            </a>
+          </div>
+
+          <!-- Upload Receipt Form -->
+          <div class="text-start border-top pt-3 mt-3">
+            <label for="receipt-file-input" class="form-label fw-bold small">
+              <i class="fa-solid fa-file-invoice-dollar text-primary me-1"></i> អាប់ឡូតរូបភាពវិក្កយបត្រ (Receipt)៖
+            </label>
+            <input type="file" id="receipt-file-input" class="form-control form-control-sm mb-2" accept="image/*" onchange="handleReceiptFileSelect()" />
+            <div id="receipt-upload-alert" class="alert alert-info py-2 extra-small mb-2 d-none"></div>
+          </div>
+
+          <!-- 5-Minute Countdown Display -->
+          <div id="payment-timer-container" class="alert alert-warning py-2 my-2 text-center small fw-bold d-none">
+            <i class="fa-solid fa-hourglass-half fa-spin me-1 text-danger"></i>
+            សូមរង់ចាំ Admin ពិនិត្យវិក្កយបត្រ៖ <span id="timer-countdown" class="text-danger fs-6 ms-1">05:00</span>
+          </div>
+        </div>
+
+        <div class="modal-footer border-0 pt-0 d-flex flex-column gap-2">
+          <!-- Confirm & Send Receipt Button -->
+          <button type="button" id="btn-confirm-payment" class="btn btn-primary fw-bold w-100 py-2 disabled" onclick="submitReceiptAndConfirm()">
+            <i class="fa-solid fa-paper-plane me-1"></i> ផ្ញើវិក្កយបត្រ / បង់ប្រាក់រួចរាល់
+          </button>
+
+          <!-- Join Telegram Button (Shown ONLY after 5-minute countdown finishes) -->
+          <a id="btn-telegram-group" href="#" target="_blank" class="btn btn-primary fw-bold w-100 py-2 d-none" style="background-color: #0088cc; border-color: #0088cc;">
+            <i class="fa-brands fa-telegram me-1"></i> ចូលរួម Telegram Group
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Multi-Column Footer -->
+  <footer class="bg-white border-top mt-auto py-5">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <div class="fw-bold text-primary fs-4 mb-2"><i class="fa-solid fa-graduation-cap"></i> សាលា EDU</div>
+          <p class="text-muted small mb-3">រៀនជំនាញរចនាក្រាហ្វិក កាត់តវីដេអូ សរសេរកូដគេហទំព័រ និងកម្មវិធីទូរស័ព្ទដៃជាមួយមេរៀនវីដេអូទាន់សម័យ។</p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-light btn-sm border rounded-circle"><i class="fa-brands fa-facebook-f text-primary"></i></a>
+            <a href="#" class="btn btn-light btn-sm border rounded-circle"><i class="fa-brands fa-youtube text-danger"></i></a>
+            <a href="#" class="btn btn-light btn-sm border rounded-circle"><i class="fa-brands fa-instagram text-warning"></i></a>
+            <a href="#" class="btn btn-light btn-sm border rounded-circle"><i class="fa-brands fa-linkedin-in text-info"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <h5 class="fw-bold fs-6 mb-3">ម៉ឺនុយ</h5>
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-2"><a href="#" onclick="document.querySelector('[data-target=\'home\']').click(); return false;" class="text-decoration-none text-muted">ទំព័រដើម</a></li>
+            <li class="mb-2"><a href="#" onclick="document.querySelector('[data-target=\'class\']').click(); return false;" class="text-decoration-none text-muted">វគ្គសិក្សាទាំងអស់</a></li>
+            <li class="mb-2"><a href="#" onclick="document.querySelector('[data-target=\'about\']').click(); return false;" class="text-decoration-none text-muted">អំពីយើង</a></li>
+            <li class="mb-2"><a href="#" onclick="document.querySelector('[data-target=\'contact\']').click(); return false;" class="text-decoration-none text-muted">ទំនាក់ទំនង</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="fw-bold fs-6 mb-3">វគ្គសិក្សាពេញនិយម</h5>
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-2">Adobe Photoshop & Illustrator</li>
+            <li class="mb-2">Premiere Pro & After Effects</li>
+            <li class="mb-2">HTML, CSS & Web Dev II</li>
+            <li class="mb-2">Java & Flutter App Dev</li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="fw-bold fs-6 mb-3">ទទួលព័ត៌មានថ្មីៗ</h5>
+          <p class="text-muted small mb-2">ចុះឈ្មោះដើម្បីទទួលបានការជូនដំណឹងនៅពេលមានវគ្គសិក្សាថ្មីៗ។</p>
+          <form class="d-flex gap-2" onsubmit="event.preventDefault(); alert('បានចុះឈ្មោះជោគជ័យ!');">
+            <input type="email" class="form-control form-control-sm" placeholder="អាសយដ្ឋានអ៊ីមែល" required />
+            <button class="btn btn-primary btn-sm" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-top pt-3 text-center text-muted small">
+        <p class="m-0">&copy; 2026 EDU Learning Platform. រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CDN Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('dark-mode-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const htmlElement = document.documentElement;
+      
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        htmlElement.setAttribute('data-bs-theme', 'dark');
+        themeIcon.className = 'fa-solid fa-sun';
+      } else {
+        htmlElement.removeAttribute('data-bs-theme');
+        themeIcon.className = 'fa-solid fa-moon';
+      }
+      
+      toggleBtn.addEventListener('click', function() {
+        const isDark = htmlElement.getAttribute('data-bs-theme') === 'dark';
+        if (isDark) {
+          htmlElement.removeAttribute('data-bs-theme');
+          themeIcon.className = 'fa-solid fa-moon';
+          localStorage.setItem('theme', 'light');
+        } else {
+          htmlElement.setAttribute('data-bs-theme', 'dark');
+          themeIcon.className = 'fa-solid fa-sun';
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    });
+  </script>
+
+  <!-- Application Logic -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
